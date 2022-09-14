@@ -8,6 +8,5 @@ def show_katalog(request):
         'list_catalog': data_catalog_item, 
         'name': 'Shafa', 
         'student_id': '2106634534'  
-        
 }
     return render(request, 'katalog.html', context)
