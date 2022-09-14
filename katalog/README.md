@@ -55,6 +55,43 @@ urlpatterns = [
 ```
 *Routing* pada file urls.py yang terdapat pada folder katalog berfungsi untuk memetakan URL *path expressions* ke fungsi show_katalog. 
 
+```
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('example_app.urls')),
+    path('katalog/', include('katalog.urls')),
+]
+```
+
+Apabila Django bertemu keyword include() maka Django akan memangkas bagian dari URL yang sama sampai dengan bagian ‘katalog/’ dan akan menyatukan string sisanya dengan URLconf agar dapat diproses lebih lanjut. 
+
+URL mapping pada folder project Django dan folder katalog berfungsi untuk redirect requests dari project URLS ke app URLS (katalog) dan berakhir di fungsi views yang sesuai (show_katalog).
+
+- Menyediakan tempat untuk pemetaan data ke template pada katalog.html yang ditandai dengan {{}}
+
+```
+<h5>Name: </h5>
+  <p>{{name}}</p>
+
+  <h5>Student ID: </h5>
+  <p>{{student_id}}</p>
+...
+{% for item in list_catalog %}
+    <tr>
+      <th>{{item.item_name}}</th>
+      <th>{{item.item_price}}</th>
+      <th>{{item.description}}</th>
+      <th>{{item.item_stock}}</th>
+      <th>{{item.rating}}</th>
+      <th>{{item.item_url}}</th>
+    </tr>
+  ```
+  
+- Deployment
+
+Memasukkan API Key dan API App Name pada secrets variable repository GitHub.
+
+
 
 
 
