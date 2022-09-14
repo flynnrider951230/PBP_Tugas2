@@ -2,7 +2,7 @@
 
 ## [Link Aplikasi Heroku](http://pbpshafa.herokuapp.com/katalog/)
 
-## Bagan Request Client Django Web App beserta Responsenya & Kaitan antara urls.py, views.py, models.py, dan berkas html
+### Bagan Request Client Django Web App beserta Responsenya & Kaitan antara urls.py, views.py, models.py, dan berkas html
 
 ![Bagan Request Client Django Web App & Response](bagan_tugas_2.jpg)
 
@@ -22,7 +22,7 @@ Template merupakan sebuah .html file yang umumnya ditulis menggunakan HTML, CSS,
 
 > Kaitan antara urls.py, views.py, model.py dan HTML pada bagan tersebut yaitu urls.py berperan sebagai module yang berfungsi untuk memetakan redirect requests dari project URLS ke app URLS dan mencari views yang sesuai. Pada module views.py terdapat fungsi yang dapat memetakan context ke HTML (template). Value dari context yang akan dipetakan diperoleh dengan menginisiasi objek dari model.py dimana objek tersebut akan berisi query set dari data-data hasil query Views terhadap Model. Model menyediakan data tersebut melalui information exchange dengan database. 
  
-## Alasan menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment
+### Alasan menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment
 
 - *Virtual environments allow you to isolate your projects*
 
@@ -30,4 +30,34 @@ Setiap projects memiliki librarynya masing-masing sehingga ketika ingin melakuka
 - *Upgrade* pada project apabila dilakukan pada virtual environment tidak akan mengganggu project yang sudah memasuki fase *running*. 
 
 Pembuatan web app berbasis Django bukan merupakan sebuah obligasi sehingga tetap memungkinkan untuk membuat web app berbasis Django tanpa menggunakan virtual environment. Namun, pembuatan web app berbasis Django menggunakan virtual environment dapat dikatakan sebagai langkah *best practice*. 
+
+### Bagaimana cara kamu implementasi poin 1 sampai dengan poin 4
+
+- Membuat fungsi show_katalog pada views.py 
+```
+def show_katalog(request):
+    data_catalog_item = CatalogItem.objects.all()
+    context = {
+        'list_catalog': data_catalog_item, 
+        'name': 'Shafa', 
+        'student_id': '2106634534'  
+}
+    return render(request, 'katalog.html', context)
+```
+show_katalog berfungsi untuk memetakan data dari Model pada models.py ke template katalog.html. Fungsi show_katalog memiliki parameter berupa *request* dan mengembalikan HTTP response (HTML). Isi dari {} menandakan dictionary values yang dapat ditambahkan ke konteks sesuai pada template. 
+
+- *Routing* untuk memetakan fungsi show_katalog
+```app_name = 'katalog'
+
+urlpatterns = [
+    path('', show_katalog, name='show_katalog'),
+]
+```
+*Routing* pada file urls.py yang terdapat pada folder katalog berfungsi untuk memetakan URL *path expressions* ke fungsi show_katalog. 
+
+
+
+
+
+    
 
