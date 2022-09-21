@@ -1,0 +1,124 @@
+[
+    {
+        "model":"mywatchlist.watchlistitem",
+        "pk":1,
+        "fields": {
+            "watched": "Watched",
+            "title": "Little Women", 
+            "rating": 4.2, 
+            "release_date": "2020-02-20",
+            "review": "What a sweet, elegant, cinematographic piece. What a fabulous cast! What a great film!"
+        }
+
+    },
+
+    {
+        "model":"mywatchlist.watchlistitem",
+        "pk":2,
+        "fields": {
+            "watched": "Have Not Watched",
+            "title": "Top Gun", 
+            "rating": 4.1, 
+            "release_date": "2022-05-27",
+            "review": "Staggering sequences that annihilate the senses, multiple moments of white knuckled intensity- the action is breathtakingly beautiful and deranged. "
+        }
+
+    }, 
+
+    {
+        "model":"mywatchlist.watchlistitem",
+        "pk":3,
+        "fields": {
+            "watched": "Watched",
+            "title": "Twenty Five Twenty One", 
+            "rating": 5, 
+            "release_date": "2022-02-12",
+            "review": "Pay for my therapy."
+        }
+
+    }, 
+    {
+        "model":"mywatchlist.watchlistitem",
+        "pk":4,
+        "fields": {
+            "watched": "Have Not Watched",
+            "title": "Us and Them", 
+            "rating": 5, 
+            "release_date": "2018-04-18",
+            "review": "This film encompasses family, love and nostalgia in both a heartbreaking and heartwarming way."
+        }
+
+    }, 
+    {
+        "model":"mywatchlist.watchlistitem",
+        "pk":5,
+        "fields": {
+            "watched": "Watched",
+            "title": "Hunger Games: Catching Fire", 
+            "rating": 3.6, 
+            "release_date": "2013-11-22",
+            "review": "One of the rare sequels that takes the material from the first and not only progresses the story in a manner of which is both fitting and logical, but actually improves upon the elements that made the initial film compelling to begin with."
+        }
+
+    }, 
+    {
+        "model":"mywatchlist.watchlistitem",
+        "pk":6,
+        "fields": {
+            "watched": "Watched",
+            "title": "Grave of The Fireflies", 
+            "rating": 4.4, 
+            "release_date": "1988-04-16",
+            "review": "Unrelenting in its portrayal of the horrors of war and the loss of innocence."
+        }
+
+    }, 
+    {
+        "model":"mywatchlist.watchlistitem",
+        "pk":7,
+        "fields": {
+            "watched": "Have Not Watched",
+            "title": "Sweet Home", 
+            "rating": 3.9, 
+            "release_date": "2020-12-18",
+            "review": "A wild first episode. Crazy stuff. There is a lot going on already, creating a large mystery while hinting at something larger already. "
+        }
+
+    }, 
+    {
+        "model":"mywatchlist.watchlistitem",
+        "pk":8,
+        "fields": {
+            "watched": "Watched",
+            "title": "Happiness", 
+            "rating": 4.1, 
+            "release_date": "2021-11-05",
+            "review": "Extremely gripping from the first few minutes in, very well paced throughout the entire series and the performances are so so entertaining."
+        }
+
+    }, 
+    {
+        "model":"mywatchlist.watchlistitem",
+        "pk":9,
+        "fields": {
+            "watched": "Have Not Watched",
+            "title": "Lady Bird", 
+            "rating": 5, 
+            "release_date": "2018-02-28",
+            "review": "The complexities of human connection and familial relationships was perfectly portrayed by the film and its bittersweet dramedy aspect will definitely force you to remember your adolescent years, whether it be good or bad."
+        }
+
+    }, 
+    {
+        "model":"mywatchlist.watchlistitem",
+        "pk":10,
+        "fields": {
+            "watched": "Watched",
+            "title": "Love, Rosie", 
+            "rating": 3.5, 
+            "release_date": "2014-10-22",
+            "review": "The film has a interesting formula thanks to Juliette Towhidi's screenplay, and Lily Collins and Sam Claflin share excellent chemistry when they are on screen together."
+        }
+
+    }
+]

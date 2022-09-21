@@ -1,0 +1,18 @@
+<h1>{{Name}}'s Watchlist</h1>
+
+<table>
+    <th>Watched Status</th>
+    <th>Movie's Title</th>
+    <th>Movie's Rating</th>
+    <th>Movie's Release Date</th>
+    <th>Movies' Review</th>
+    {% for watchlist in list_mywatchlist %} 
+    <tr>
+        <th>{{watchlist.watched}}</th>
+        <th>{{watchlist.title}}</th>
+        <th>{{watchlist.rating}}</th>
+        <th>{{watchlist.release_date}}</th>
+        <th>{{watchlist.review}}</th>
+    </tr>
+    {% endfor %}
+</table>
