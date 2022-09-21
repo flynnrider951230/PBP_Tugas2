@@ -1,20 +1,20 @@
-<h1>Assignment 3 PBP/PBD</h1>
+<h1 style="text-align: center;">Assignment 3 PBP/PBD</h1>
 
-<h3>{{Name}}'s Watchlist</h3>
+<h3 style="text-align: center;">{{Name}}'s Watchlist</h3>
 
-<table>
-    <th>Watched Status</th>
+<table style="text-align: center;">
+    <th style="padding-left: 40px; padding-right: 40px;">Watched Status</th>
     <th>Movie's Title</th>
     <th>Movie's Rating</th>
-    <th>Movie's Release Date</th>
-    <th>Movies' Review</th>
+    <th style="padding-left: 15px; padding-right: 15px">Release Date</th>
+    <th style="text-align: left; padding-left: 20px;">Movies' Review</th>
     {% for watchlist in list_mywatchlist %} 
     <tr>
-        <th>{{watchlist.watched}}</th>
-        <th>{{watchlist.title}}</th>
-        <th>{{watchlist.rating}}</th>
-        <th>{{watchlist.release_date}}</th>
-        <th>{{watchlist.review}}</th>
+        <th style="padding: 10px; padding-top:10px;">{{watchlist.watched}}</th> 
+        <th style="margin-left: 150px; margin-right:150px ; padding-top:10px;">{{watchlist.title}}</th>
+        <th padding-top:10px>{{watchlist.rating}}</th>
+        <th padding-top:10px>{{watchlist.release_date}}</th>
+        <th style="text-align: left; padding-left: 20px; padding-top:10px ;">{{watchlist.review}}</th>
     </tr>
     {% endfor %}
 </table>
