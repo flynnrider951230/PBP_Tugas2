@@ -1,4 +1,3 @@
-from tkinter import W
 from django.shortcuts import render
 from mywatchlist.models import WatchlistItem
 from django.http import HttpResponse
