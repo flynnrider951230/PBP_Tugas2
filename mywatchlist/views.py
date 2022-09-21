@@ -10,7 +10,7 @@ def show_mywatchlist(request):
         'list_mywatchlist': data_mywatchlist, 
         'Name': 'Shafa'
     }
-    return render(request, "mywatchlist.html", context)
+    return render(request, 'mywatchlist.html', context)
 
 def show_xml(request) :
     data = WatchlistItem.objects.all()
