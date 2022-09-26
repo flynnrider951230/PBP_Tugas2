@@ -1,7 +1,7 @@
 ### Tugas 3 - Shafa Aleyda Tsabitah (2106634534)\_PBP F
 #
 
-##### [Link Aplikasi Heroku HTML](https://pbpshafa.herokuapp.com/mywatchlist/html/) | [Link Aplikasi Heroku XML](https://pbpshafa.herokuapp.com/mywatchlist/xml/) | [Link Aplikasi Heroku JSON](https://pbpshafa.herokuapp.com/mywatchlist/json/)
+##### [Link Aplikasi Heroku HTML](https://tugaspbpshafa.herokuapp.com/mywatchlist/html/) | [Link Aplikasi Heroku XML](https://tugaspbpshafa.herokuapp.com/mywatchlist/xml/) | [Link Aplikasi Heroku JSON](https://tugaspbpshafa.herokuapp.com/mywatchlist/json/)
 
 #### Jelaskan perbedaan antara HTML, JSON, dan XML
 
