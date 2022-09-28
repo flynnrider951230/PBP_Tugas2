@@ -9,7 +9,7 @@ CSRF token merupakan token unik, rahasia, dan tidak dapat diprediksi yang di-gen
 Server akan menolak request dari klien apabila tidak terdapat token atau token yang diberikan invalid. CSRF berfungsi untuk mencegah serangan CSRF. 
 Apabila tidak terdapat potongan kode pada elemen form, akan tampil halaman seperti berikut. 
 
-![CSRF error](todolist/csrf_error.png)
+![CSRF error](csrf_error.png)
 
 Request yang diminta oleh klien akan ditolak oleh server karena tidak terdapat CSRF token pada elemen form di halaman html form. 
 
@@ -46,5 +46,5 @@ Mulanya, model akan didaftarkan pada site admin sehingga model dapat dikenali. F
 Selanjutnya, request HTTP berupa path menuju form akan diimplementasikan pada fungsi form yang terdapat di views.py. Routing dari fungsi form dipetakan pada module urls.py. Halaman HTML dari pembuatan task kemudian diimplementasikan menggunakan elemen form.
 
 - Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku.
-![dummy1](todolist/pengguna1_tugas3.png)
-![dummy2](todolist/pengguna2_tugas4.png)
+![dummy1](pengguna1_tugas3.png)
+![dummy2](pengguna2_tugas4.png)
