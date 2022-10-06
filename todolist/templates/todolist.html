@@ -1,56 +1,65 @@
-<style>
-.button {
-  transition-duration: 0.4s;
-  background-color: #e7e7e7;
-  border-radius: 4px;
-  border-style: none;
-  
-}
-
-.button:hover {
-  background-color: black;
-  color: white;
-}
-
-a{
-    color:royalblue;
-    text-shadow: #e7e7e7;
-}
-a:link {
-  text-decoration: none;
-}
-a:hover{
-  color: #e7e7e7;
-}
-a, h1, h3, th, td {
-  font-family:Arial, Helvetica, sans-serif;
-}
-</style>
+{% extends 'base.html' %}
+{% block content %}
 
 
-<h1 style="text-align: center;">Assignment 4 PBP/PBD</h1>
+<div
+  class="bg-image"
+  style="
+    background-image: url('https://images.unsplash.com/photo-1627037558426-c2d07beda3af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1275&q=80'); 
+    background-size: contain;
+    /* background: linear-gradient(#ffffff, #6d6d6a); */
+  "
+>
+<nav class="navbar navbar-expand-lg shadow p-3 mb-5 bg-body opacity-75">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color: black;">To Do List</a>
+      <button class="btn btn btn-secondary ms-auto"><a style="color:white; text-decoration: none; " href="{% url 'todolist:create-task' %}">Create Task</a></button>
+      <button class="btn btn btn-secondary mx-2"><a style="color:rgba(255, 255, 255, 0.572);" href="{% url 'todolist:logout' %}">Logout</a></button>
+      
 
-<h3 style="text-align: center; border-bottom: 1px solid black;
-padding-bottom: 5px;">To Do List</h3>
-<h3 style="text-align: center; ">{{user}}</h3>
+  </div>
+</nav>
 
-<table style="text-align: center; margin-left: auto; margin-right: auto;" >
-    <th style="padding-left: 40px; padding-right: 40px;">Judul Task</th>
-    <th style="padding-left: 40px; padding-right: 40px;">Tanggal Pembuatan Task</th>
-    <th style="padding-left: 40px; padding-right: 40px;">Deksripsi Task</th>
+
+
+<div class="text-center mt-2 mb-4" >
+  <h5 class="fst-italic opacity-75" style="color: black; font-size:xx-large;">Welcome, {{user}} </h5>
+</div>
+
+<table>
     {% for task in user.todolist.all %}  
     <tr>
-        <th style="padding: 10px; padding-top:10px;">{{task.title}}</th> 
-        <th style="margin-left: 150px; margin-right:150px ; padding-top:10px;">{{task.date}}</th>
-        <th padding-top:10px>{{task.description}}</th>
+      
+      <div class="container-sm">
+          <div class="row justify-content-between">
+            <div class="col">
+              <div class="card mt-2 rounded-1 border-0 shadow-lg opacity-75">
+                <div class="card-body">
+                  <div class="row justify-content-between">
+                  <div class="col">
+                  <h3 class="card-title" style="text-decoration: underline;">{{task.title}}</h3>
+                  <h5 class="card-text">{{task.date}}</h5>
+                  <p>{{task.description}}</p>
+                </div>
+                <div class="col-1">
+                  <div class="form-check mt-4 ms-auto mb-2 mx-auto">
+                    <input class="form-check-input p-3" type="checkbox" value="" id="defaultCheck1">
+                  </div>
+                </div>
+              </div>
+            </div>
+                </div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
     </tr> 
     {% endfor %}
 </table>
-
-<div style="text-align: center; "> 
-    <button class = "button" style="margin-left: auto; margin-right: auto; margin-top: 10px; padding: 12px 48px;"><a href="{% url 'todolist:logout' %}">Logout</a></button>
-    <button class = "button" style="margin-left: auto; margin-right: auto; margin-top: 10px; padding: 12px 48px;"><a href="{% url 'todolist:create-task' %}">Tambah Task Baru</a></button>
 </div>
-   
+
+{% endblock content %}
+
 
 

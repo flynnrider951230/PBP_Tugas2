@@ -10,7 +10,8 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from todolist.forms import TaskForm
-from datetime import date
+import datetime
+
 @login_required(login_url='/todolist/login/')
 # Create your views here.
 def show_todolist(request):
@@ -18,7 +19,7 @@ def show_todolist(request):
     context = {
     'list_task': data_task,
     'nama': 'Shafa',
-    'last_login': request.COOKIES['last_login'],
+    #'last_login': request.COOKIES['last_login'],
 }
     return render(request, 'todolist.html', context)
 
@@ -62,7 +63,7 @@ def form (request):
         if form.is_valid():
             instance = form.save(commit=False) 
             instance.user= request.user
-            instance.date = date.today()
+            instance.date = datetime.datetime.now()
             instance.save()
             return redirect('todolist:show_todolist')
     context = {'form':form}
