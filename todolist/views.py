@@ -11,6 +11,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from todolist.forms import TaskForm
 import datetime
+from django.http import HttpResponse
+from django.core import serializers
 
 @login_required(login_url='/todolist/login/')
 # Create your views here.
@@ -19,9 +21,21 @@ def show_todolist(request):
     context = {
     'list_task': data_task,
     'nama': 'Shafa',
-    #'last_login': request.COOKIES['last_login'],
+    'last_login': request.COOKIES['last_login'],
 }
     return render(request, 'todolist.html', context)
+
+@login_required(login_url='/todolist/login/')
+def show_todolist_ajax(request): 
+    context = {
+    'nama': 'Shafa',
+    'last_login': request.COOKIES['last_login'],
+}
+    return render(request, 'todolist_ajax.html', context)
+
+def show_todolist_json(request):
+    data_task = Task.objects.all()
+    return HttpResponse(serializers.serialize("json", data_task), content_type="application/json")
 
 def register(request):
     form = UserCreationForm()
@@ -68,3 +82,19 @@ def form (request):
             return redirect('todolist:show_todolist')
     context = {'form':form}
     return render(request, "taskbaru.html", context)
+
+def add_task(request):
+    if (request.method == 'POST'):
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+
+        new_task = Task.objects.create(
+            title=title, 
+            description=description, 
+            date=datetime.datetime.now(),
+            user=request.user, 
+        )
+
+        new_task.save()
+        return HttpResponse("")
+    return render(request, "taskbaru.html")
