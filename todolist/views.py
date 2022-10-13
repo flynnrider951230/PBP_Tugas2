@@ -34,7 +34,7 @@ def show_todolist_ajax(request):
     return render(request, 'todolist_ajax.html', context)
 
 def show_todolist_json(request):
-    data_task = Task.objects.all()
+    data_task = Task.objects.filter(user=request.user); 
     return HttpResponse(serializers.serialize("json", data_task), content_type="application/json")
 
 def register(request):
